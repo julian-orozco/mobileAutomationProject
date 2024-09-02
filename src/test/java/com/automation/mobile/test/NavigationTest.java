@@ -21,7 +21,7 @@ public class NavigationTest extends BaseTest {
         LoginScreen loginScreen = webViewScreen.tapLoginBtn();
         Assert.assertTrue(loginScreen.titleDisplayed());
         Assert.assertTrue(loginScreen.loginBtnDisplayed());
-        Assert.assertTrue(loginScreen.signinBtnDisplayed());
+        Assert.assertTrue(loginScreen.signupBtnDisplayed());
         Assert.assertTrue(loginScreen.emailtxtDisplayed());
         Assert.assertTrue(loginScreen.passwordTxtDisplayed());
         Assert.assertTrue(loginScreen.sendLoginBtnDisplayed());
