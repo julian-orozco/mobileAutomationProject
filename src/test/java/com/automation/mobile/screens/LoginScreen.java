@@ -18,8 +18,8 @@ public class LoginScreen extends BaseScreen {
     private static final String PASSWORD_INPUT = "input-password";
     private static final String CONF_PASS_INPUT = "UiSelector().textContains(\"Confirm password\")";
     private static final String SIGNUP_SEND_BTN = "button-SIGN UP";
-    private String email;
-    private String password;
+    private static String email;
+    private static String password;
 
 
     @AndroidFindBy(uiAutomator = TITLE)
@@ -92,6 +92,11 @@ public class LoginScreen extends BaseScreen {
         this.signupBtn.click();
     }
 
+    public void taploginBtn(){
+        this.waitElementIsDisplayed(this.loginBtn);
+        this.loginBtn.click();
+    }
+
     public void enterEmail(){
         this.waitElementIsDisplayed(this.emailInput);
         this.emailInput.sendKeys(this.email);
@@ -113,6 +118,12 @@ public class LoginScreen extends BaseScreen {
         return new SuccesfullySignUpScreen(driver);
     }
 
+    public SuccesfullyLoginScreen tapSendLoginBtn(){
+        this.waitElementIsDisplayed(this.sendLoginBtn);
+        this.sendLoginBtn.click();
+        return new SuccesfullyLoginScreen(driver);
+    }
+
     public String generateRandomEmail(){
         String randomString = RandomStringUtils.randomAlphanumeric(10);
         return randomString + "@mail.com";
@@ -120,7 +131,9 @@ public class LoginScreen extends BaseScreen {
 
     public LoginScreen(AndroidDriver driver) {
         super(driver);
-        this.email = this.generateRandomEmail();
-        this.password = "12345678";
+        if (LoginScreen.email == null) {
+            LoginScreen.email = this.generateRandomEmail();
+            LoginScreen.password = "12345678";
+        }
     }
 }

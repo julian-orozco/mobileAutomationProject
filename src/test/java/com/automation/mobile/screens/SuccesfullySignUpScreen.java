@@ -7,13 +7,23 @@ import org.openqa.selenium.WebElement;
 
 public class SuccesfullySignUpScreen extends BaseScreen {
     private static final String SUCCESS_MSG = "UiSelector().textContains(\"You successfully signed up!\")";
+    private static final String OK_BTN = "UiSelector().resourceId(\"android:id/button1\")";
 
     @AndroidFindBy(uiAutomator = SUCCESS_MSG)
     private WebElement successMsg;
 
+    @AndroidFindBy(uiAutomator = OK_BTN)
+    private WebElement okBtn;
+
     public boolean successMsgDisplayed(){
         this.waitElementIsDisplayed(this.successMsg);
         return this.successMsg.isDisplayed();
+    }
+
+    public LoginScreen tapOkBtn(){
+        this.waitElementIsDisplayed(this.okBtn);
+        this.okBtn.click();
+        return new LoginScreen(driver);
     }
 
     public SuccesfullySignUpScreen(AndroidDriver driver) {
