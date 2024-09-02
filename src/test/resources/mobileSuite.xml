@@ -11,4 +11,9 @@
             <class name="com.automation.mobile.test.SignupTest"/>
         </classes>
     </test>
+    <test name="Successfull Login Test">
+        <classes>
+            <class name="com.automation.mobile.test.LoginTest"/>
+        </classes>
+    </test>
 </suite>
