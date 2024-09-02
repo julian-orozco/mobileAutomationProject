@@ -17,6 +17,7 @@ public class HomeScreen extends BaseScreen {
     private WebElement webViewBtn;
 
     public boolean webDriverTitleDisplayed(){
+        this.waitElementIsDisplayed(this.webDriverTitle);
         return this.webDriverTitle.isDisplayed();
     }
 
