@@ -3,7 +3,10 @@ package com.automation.mobile.utils.tests;
 import com.automation.mobile.screens.HomeScreen;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 
 import java.io.FileInputStream;
 import java.net.MalformedURLException;
@@ -15,7 +18,7 @@ public class BaseTest {
     private static final Properties properties = new Properties();
     public static AndroidDriver driver;
 
-    @BeforeMethod(alwaysRun = true)
+    @BeforeTest
     public void enviromentSetUp() {
         loadProperties();
         UiAutomator2Options capabilites = new UiAutomator2Options();
@@ -27,6 +30,13 @@ public class BaseTest {
             System.out.println(exception.getMessage());
         }
 
+    }
+
+    @AfterTest
+    public void closeDriver(){
+        if (driver != null) {
+            driver.quit();
+        }
     }
 
     public void loadProperties() {

@@ -16,7 +16,6 @@ public class FormsScreen extends BaseScreen {
     private static final String SELECT_ITEM_DROPDOWN = "UiSelector().textContains(\"Select an item...\")";
     private static final String ACTIVE_BTN = "UiSelector().className(\"android.view.ViewGroup\").instance(17)";
     private static final String INACTIVE_BTN = "UiSelector().className(\"android.view.ViewGroup\").instance(19)";
-    private static final String SWIPE_BTN = "Swipe";
 
     @AndroidFindBy(uiAutomator = TITLE)
     private WebElement title;
@@ -44,9 +43,6 @@ public class FormsScreen extends BaseScreen {
 
     @AndroidFindBy(uiAutomator = INACTIVE_BTN)
     private WebElement inactiveBtn;
-
-    @AndroidFindBy(accessibility = SWIPE_BTN)
-    private WebElement swipeBtn;
 
     public boolean titleDisplayed(){
         this.waitElementIsDisplayed(this.title);
@@ -91,12 +87,6 @@ public class FormsScreen extends BaseScreen {
     public boolean inactiveBtnDisplayed(){
         this.waitElementIsDisplayed(this.inactiveBtn);
         return this.inactiveBtn.isDisplayed();
-    }
-
-    public SwipeScreen tapSwipeBtn(){
-        this.waitElementIsDisplayed(this.swipeBtn);
-        this.swipeBtn.click();
-        return new SwipeScreen(this.driver);
     }
 
     public FormsScreen(AndroidDriver driver) {

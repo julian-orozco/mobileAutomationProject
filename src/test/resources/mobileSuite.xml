@@ -6,4 +6,9 @@
             <class name="com.automation.mobile.test.NavigationTest"/>
         </classes>
     </test>
+    <test name="Successfull Sign Up Test">
+        <classes>
+            <class name="com.automation.mobile.test.SignupTest"/>
+        </classes>
+    </test>
 </suite>
