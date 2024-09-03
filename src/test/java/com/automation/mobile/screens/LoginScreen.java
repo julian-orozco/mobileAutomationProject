@@ -11,12 +11,10 @@ public class LoginScreen extends BaseScreen {
     private static final String TITLE = "UiSelector().textContains(\"Login / Sign up Form\")";
     private static final String LOGIN_BTN = "UiSelector().text(\"Login\")";
     private static final String SIGNUP_BTN = "UiSelector().text(\"Sign up\")";
-    private static final String EMAIL_TXT = "UiSelector().textContains(\"Email\")";
-    private static final String PASSWORD_TXT = "UiSelector().textContains(\"Password\")";
     private static final String SEND_LOGIN_BTN = "UiSelector().className(\"android.view.ViewGroup\").instance(16)";
     private static final String EMAIL_INPUT = "input-email";
     private static final String PASSWORD_INPUT = "input-password";
-    private static final String CONF_PASS_INPUT = "UiSelector().textContains(\"Confirm password\")";
+    private static final String CONF_PASS_INPUT = "input-repeat-password";
     private static final String SIGNUP_SEND_BTN = "button-SIGN UP";
     private static String email;
     private static String password;
@@ -31,12 +29,6 @@ public class LoginScreen extends BaseScreen {
     @AndroidFindBy(uiAutomator = SIGNUP_BTN)
     private WebElement signupBtn;
 
-    @AndroidFindBy(uiAutomator = EMAIL_TXT)
-    private WebElement emailtxt;
-
-    @AndroidFindBy(uiAutomator = PASSWORD_TXT)
-    private WebElement passwordTxt;
-
     @AndroidFindBy(uiAutomator = SEND_LOGIN_BTN)
     private WebElement sendLoginBtn;
 
@@ -46,7 +38,7 @@ public class LoginScreen extends BaseScreen {
     @AndroidFindBy(accessibility = PASSWORD_INPUT)
     private WebElement passwordInput;
 
-    @AndroidFindBy(uiAutomator = CONF_PASS_INPUT)
+    @AndroidFindBy(accessibility = CONF_PASS_INPUT)
     private WebElement confirmPassInput;
 
     @AndroidFindBy(accessibility = SIGNUP_SEND_BTN)
@@ -67,14 +59,14 @@ public class LoginScreen extends BaseScreen {
         return this.signupBtn.isDisplayed();
     }
 
-    public boolean emailtxtDisplayed(){
-        this.waitElementIsDisplayed(this.emailtxt);
-        return this.emailtxt.isDisplayed();
+    public boolean emailInputDisplayed(){
+        this.waitElementIsDisplayed(this.emailInput);
+        return this.emailInput.isDisplayed();
     }
 
-    public boolean passwordTxtDisplayed(){
-        this.waitElementIsDisplayed(this.passwordTxt);
-        return this.passwordTxt.isDisplayed();
+    public boolean passwordInputDisplayed(){
+        this.waitElementIsDisplayed(this.passwordInput);
+        return this.passwordInput.isDisplayed();
     }
 
     public boolean sendLoginBtnDisplayed(){

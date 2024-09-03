@@ -22,8 +22,8 @@ public class NavigationTest extends BaseTest {
         Assert.assertTrue(loginScreen.titleDisplayed());
         Assert.assertTrue(loginScreen.loginBtnDisplayed());
         Assert.assertTrue(loginScreen.signupBtnDisplayed());
-        Assert.assertTrue(loginScreen.emailtxtDisplayed());
-        Assert.assertTrue(loginScreen.passwordTxtDisplayed());
+        Assert.assertTrue(loginScreen.emailInputDisplayed());
+        Assert.assertTrue(loginScreen.passwordInputDisplayed());
         Assert.assertTrue(loginScreen.sendLoginBtnDisplayed());
 
         FormsScreen formsScreen = loginScreen.tapFormsBtn();
@@ -44,7 +44,7 @@ public class NavigationTest extends BaseTest {
         Assert.assertTrue(swipeScreen.githubTxtDisplayed());
         Assert.assertTrue(swipeScreen.card0Displayed());
 
-        DragScreen dragScreen = swipeScreen.tapDragBtn();
+        DragScreen dragScreen = swipeScreen.tapDragBtn();;
         Assert.assertTrue(dragScreen.titleDisplayed());
 
         Assert.assertTrue(dragScreen.drop1Displayed());

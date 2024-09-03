@@ -27,6 +27,7 @@ public class LoginTest extends BaseTest {
 
         SuccesfullyLoginScreen succesfullyLoginScreen = loginScreen.tapSendLoginBtn();
         Assert.assertTrue(succesfullyLoginScreen.successMsgDisplayed());
+        loginScreen = succesfullyLoginScreen.tapOkBtn();
 
     }
 }

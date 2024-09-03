@@ -12,6 +12,7 @@ public class SwipeCardsTest extends BaseTest {
     public void SwipeTest(){
         HomeScreen homeScreen = returnHomeScreen();
         SwipeScreen swipeScreen = homeScreen.tapSwipeBtn();
+        homeScreen.waitForSeconds(5);
         Assert.assertTrue(swipeScreen.titleDisplayed());
 
         Assert.assertTrue(swipeScreen.githubTitleDisplayed());

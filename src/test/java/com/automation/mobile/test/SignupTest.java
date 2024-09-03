@@ -24,5 +24,6 @@ public class SignupTest extends BaseTest {
 
         SuccesfullySignUpScreen succesfullySignUpScreen = loginScreen.tapSendSignUpBtn();
         Assert.assertTrue(succesfullySignUpScreen.successMsgDisplayed());
+        loginScreen = succesfullySignUpScreen.tapOkBtn();
     }
 }
